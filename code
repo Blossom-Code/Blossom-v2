@@ -1,0 +1,156 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local currentOption = nil
+
+local function createWindow(theme)
+    if theme == nil then
+        theme = "Ocean"
+    end
+    return Library.CreateLib("Pink Blossom UI - " .. theme, theme)
+end
+--Newest Window
+local function onThemeSelect(selectedTheme)
+    print("Selected theme:", selectedTheme)
+    currentOption = selectedTheme
+    local newWindow = createWindow(currentOption)
+--universal
+    local MainTab = newWindow:NewTab("universal")
+    local MainSection = MainTab:NewSection("universal")
+
+	MainSection:NewButton("Infinite Yeild", "...", function()
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+
+end)
+
+MainSection:NewButton("Dark Dex ", "...", function()
+    loadstring(game:HttpGet('https://gitlab.com/legohackingroblox/helios/-/raw/main/DarkDexV2'))()
+
+end)
+
+MainSection:NewButton("Fly ", "...", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+
+end)
+
+MainSection:NewButton("Simple SPY ", "...", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/exxtremestuffs/SimpleSpySource/refs/heads/master/SimpleSpy.lua"))()
+
+end)
+
+MainSection:NewButton("AIMBOT ", "...", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/AirHub-V2/main/src/Main.lua"))()
+
+end)
+local Main1Section = MainTab:NewSection("Player")
+
+Main1Section:NewSlider("WalkSpeed", "...", 180, 16, function(s) 
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+Main1Section:NewSlider("JumpPower", "...", 180, 16, function(s) 
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+
+
+--themes
+    local ThemeTab = newWindow:NewTab("Other")
+    local ThemeSection = ThemeTab:NewSection("THEMES")
+
+    ThemeSection:NewDropdown("THEMES", "Pick a theme", {"DarkTheme", "LightTheme", "GrapeTheme", "BloodTheme", "Ocean", "Midnight", "Sentinel", "Serpent"}, function(theme)
+        onThemeSelect(theme)
+    end)
+
+	ThemeSection:NewKeybind("Toggle ui", "...", Enum.KeyCode.RightControl, function()
+	Library:ToggleUI()
+end)
+local Main2Tab = newWindow:NewTab("Scripts")
+
+local Main2Section = Main2Tab:NewSection("tsbg")
+
+Main2Section:NewButton("tsb(key in dots)", "TSB920Z", function()
+    loadstring(game:HttpGet("https://rentry.co/tghuofnu/raw"))()
+end)
+local Main3Section = Main2Tab:NewSection("Blade Ball Hub")
+
+Main3Section:NewButton("Blade Ball", "...", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Qrto1/working/main/pc"))()
+end)
+
+local Main4Section = Main2Tab:NewSection("Arsenal")
+
+Main4Section:NewButton("Arsenal", "OP", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/T3fzg7tm', true))()
+end)
+end
+--Start UI
+local initialWindow = createWindow(currentOption)
+--universal
+local MainTab = initialWindow:NewTab("universal")
+local MainSection = MainTab:NewSection("universal")
+
+MainSection:NewButton("Infinite Yeild", "...", function()
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+
+end)
+
+MainSection:NewButton("Dark Dex ", "...", function()
+    loadstring(game:HttpGet('https://gitlab.com/legohackingroblox/helios/-/raw/main/DarkDexV2'))()
+
+end)
+
+MainSection:NewButton("Fly ", "...", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+
+end)
+
+MainSection:NewButton("Simple SPY ", "...", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/exxtremestuffs/SimpleSpySource/refs/heads/master/SimpleSpy.lua"))()
+
+end)
+
+MainSection:NewButton("AIMBOT ", "...", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/AirHub-V2/main/src/Main.lua"))()
+
+end)
+
+local Main1Section = MainTab:NewSection("Player")
+
+Main1Section:NewSlider("WalkSpeed", "...", 180, 16, function(s) 
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+Main1Section:NewSlider("JumpPower", "...", 180, 16, function(s) 
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+--themes
+local ThemeTab = initialWindow:NewTab("Other")
+local ThemeSection = ThemeTab:NewSection("Other")
+
+ThemeSection:NewDropdown("THEMES", "Pick a theme", {"DarkTheme", "LightTheme", "GrapeTheme", "BloodTheme", "Ocean", "Midnight", "Sentinel", "Serpent"}, function(selectedTheme)
+    onThemeSelect(selectedTheme)
+end)
+
+ThemeSection:NewKeybind("Toggle ui", "...", Enum.KeyCode.RightControl, function()
+	Library:ToggleUI()
+end)
+
+local Main2Tab = initialWindow:NewTab("Scripts")
+
+local Main2Section = Main2Tab:NewSection("tsbg")
+
+Main2Section:NewButton("tsb(key in dots)", "TSB920Z", function()
+    loadstring(game:HttpGet("https://rentry.co/tghuofnu/raw"))()
+end)
+local Main3Section = Main2Tab:NewSection("Blade Ball Hub")
+
+Main3Section:NewButton("Blade Ball", "...", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Qrto1/working/main/pc"))()
+end)
+
+local Main4Section = Main2Tab:NewSection("Arsenal")
+
+Main4Section:NewButton("Arsenal", "OP", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/T3fzg7tm', true))()
+end)
+
